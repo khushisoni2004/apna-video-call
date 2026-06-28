@@ -15,12 +15,11 @@ Users can create meeting rooms, share public invite links, join video calls, cha
 ## Screenshots
 
 ### Home Page
-
 ![Home Page](assets/screenshots/homepage.png)
 
 ### Signup / Login Page
-
 ![Signup Page](assets/screenshots/signuppage.png)
+
 
 ## Features
 

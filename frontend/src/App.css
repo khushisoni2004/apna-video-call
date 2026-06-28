@@ -1,0 +1,2649 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f6f8fc;
+  color: #0f172a;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.landingPageContainer {
+  min-height: 100vh;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.35), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.32), transparent 35%),
+    linear-gradient(135deg, #07111f 0%, #111827 48%, #172554 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.landingPageContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.landingNav,
+.navBar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 6vw;
+}
+
+.brandBlock {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.brandIcon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  color: #ffffff;
+  font-weight: 900;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.28);
+}
+
+.brandBlock h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 850;
+}
+
+.brandBlock span {
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.darkBrand span {
+  color: #64748b;
+}
+
+.navlist,
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navlist p {
+  margin: 0;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.78);
+  transition: 0.2s ease;
+}
+
+.navlist p:hover {
+  color: #ffffff;
+}
+
+.navlist button,
+.secondaryCta,
+.textButton {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  backdrop-filter: blur(16px);
+}
+
+.landingMainContainer {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+  min-height: calc(100vh - 96px);
+  padding: 22px 6vw 70px;
+}
+
+.heroCopy h1 {
+  max-width: 780px;
+  margin: 20px 0;
+  font-size: clamp(2.4rem, 5vw, 5.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.07em;
+}
+
+.heroCopy p {
+  max-width: 650px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 1.12rem;
+  line-height: 1.8;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  color: #bfdbfe;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 800;
+  font-size: 0.86rem;
+}
+
+.pill.dark {
+  border-color: #dbeafe;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.heroActions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 900;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 20px 45px rgba(37, 99, 235, 0.35);
+}
+
+.heroStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.heroStats span {
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.07);
+}
+
+.heroVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.mockWindow,
+.dashboardPreview {
+  width: min(100%, 560px);
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 34px;
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 35px 90px rgba(0,0,0,0.35);
+  backdrop-filter: blur(24px);
+}
+
+.mockTop {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mockTop span,
+.mockControls span {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.4);
+}
+
+.mockGrid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 14px;
+}
+
+.tile {
+  min-height: 124px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.17), rgba(255,255,255,0.06));
+  color: rgba(255,255,255,0.84);
+  font-weight: 900;
+}
+
+.tile.big {
+  min-height: 264px;
+  grid-row: span 2;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.45), rgba(124, 58, 237, 0.25));
+}
+
+.tile.accent {
+  background: rgba(34, 197, 94, 0.17);
+}
+
+.mockControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 18px;
+}
+
+.mockControls span {
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,0.14);
+}
+
+.mockControls .end {
+  background: #ef4444;
+}
+
+.homePage {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, #dbeafe, transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #f6f8fc 100%);
+}
+
+.professionalNav {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background: rgba(255,255,255,0.78);
+  border-bottom: 1px solid #e2e8f0;
+  backdrop-filter: blur(16px);
+}
+
+.professionalMeet {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+  min-height: calc(100vh - 90px);
+  padding: 40px 6vw;
+}
+
+.meetingCard {
+  max-width: 680px;
+  padding: clamp(28px, 4vw, 56px);
+  border: 1px solid #e2e8f0;
+  border-radius: 34px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);
+}
+
+.meetingCard h1 {
+  margin: 18px 0;
+  font-size: clamp(2rem, 4.5vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.meetingCard p {
+  color: #64748b;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.joinBox {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.textButton {
+  margin-top: 18px;
+  color: #2563eb;
+  background: transparent;
+  border-color: transparent;
+  padding-left: 0;
+}
+
+.dashboardVisual {
+  justify-content: center;
+}
+
+.dashboardPreview {
+  min-height: 440px;
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+.previewHeader,
+.previewFooter,
+.previewBody div {
+  border-radius: 22px;
+  background: rgba(255,255,255,0.12);
+}
+
+.previewHeader {
+  height: 54px;
+  margin-bottom: 18px;
+}
+
+.previewBody {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.previewBody div {
+  min-height: 136px;
+}
+
+.previewFooter {
+  height: 62px;
+  margin-top: 18px;
+}
+
+.authPage {
+  background: #f8fafc;
+}
+
+.authHero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 6vw;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at top left, rgba(96,165,250,0.4), transparent 40%),
+    linear-gradient(135deg, #0f172a, #1e1b4b 55%, #312e81);
+  overflow: hidden;
+}
+
+.authHero::after {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  right: -120px;
+  bottom: -100px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.09);
+}
+
+.authHeroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+}
+
+.authHero h1 {
+  margin: 38px 0 18px;
+  font-size: clamp(2.3rem, 5vw, 4.8rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.authHero p {
+  color: rgba(255,255,255,0.74);
+  line-height: 1.8;
+  font-size: 1.08rem;
+}
+
+.authPanel {
+  display: grid !important;
+  place-items: center;
+  padding: 32px;
+  background: #ffffff !important;
+}
+
+.authCard {
+  width: min(100%, 430px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px;
+}
+
+.authTabs {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 24px;
+  padding: 6px;
+  border-radius: 18px;
+  background: #f1f5f9;
+}
+
+.authTabs button {
+  flex: 1;
+}
+
+.historyPage {
+  min-height: 100vh;
+  padding: 36px 6vw;
+  background: linear-gradient(180deg, #ffffff, #f6f8fc);
+}
+
+.historyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.historyHeader h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  letter-spacing: -0.05em;
+}
+
+.historyHeader p,
+.emptyHistory p {
+  color: #64748b;
+}
+
+.historyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.historyCard {
+  border-radius: 24px !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.06);
+}
+
+.historyCardTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2563eb;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.emptyHistory {
+  grid-column: 1 / -1;
+  padding: 56px;
+  text-align: center;
+  border: 1px dashed #cbd5e1;
+  border-radius: 28px;
+  background: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .landingMainContainer,
+  .professionalMeet {
+    grid-template-columns: 1fr;
+  }
+
+  .heroVisual,
+  .dashboardVisual {
+    display: none;
+  }
+
+  .navlist {
+    gap: 10px;
+  }
+
+  .navlist p:nth-child(2) {
+    display: none;
+  }
+
+  .joinBox {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .landingNav,
+  .navBar {
+    padding: 18px;
+  }
+
+  .navActions Button,
+  .navlist p {
+    display: none;
+  }
+
+  .professionalMeet,
+  .landingMainContainer,
+  .historyPage {
+    padding-inline: 18px;
+  }
+
+  .authPanel {
+    padding: 18px;
+  }
+}
+
+/* =========================================================
+   FINAL LIGHT PROFESSIONAL THEME OVERRIDES
+   Dashboard + Auth refinement only. Functionality unchanged.
+========================================================= */
+
+body {
+  background: #f8fbff;
+  color: #0f172a;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ---------- Light Auth Polish ---------- */
+.authPage {
+  background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 48%, #ffffff 100%) !important;
+}
+
+.authHero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(37,99,235,0.18), transparent 30%),
+    radial-gradient(circle at 82% 18%, rgba(14,165,233,0.14), transparent 28%),
+    linear-gradient(135deg, #ffffff 0%, #eef6ff 100%) !important;
+  color: #0f172a !important;
+}
+
+.authHero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  background-image:
+    linear-gradient(rgba(15,23,42,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,23,42,0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.authHeroContent {
+  position: relative;
+  z-index: 1;
+}
+
+.authHeroContent h1 {
+  color: #0f172a !important;
+  font-weight: 820 !important;
+  letter-spacing: -0.055em !important;
+}
+
+.authHeroContent p,
+.brandBlock span {
+  color: #64748b !important;
+}
+
+.authPanel {
+  background: rgba(255,255,255,0.68) !important;
+  backdrop-filter: blur(18px);
+}
+
+.authCard {
+  border: 1px solid rgba(148,163,184,0.22);
+  border-radius: 32px !important;
+  background: rgba(255,255,255,0.88) !important;
+  box-shadow: 0 28px 80px rgba(15,23,42,0.12) !important;
+}
+
+.authCard h1,
+.authCard .MuiTypography-h4 {
+  font-weight: 820 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.authTabs .MuiButton-root,
+.authCard .MuiButton-root {
+  border-radius: 15px !important;
+  text-transform: none !important;
+  font-weight: 720 !important;
+}
+
+.authCard .MuiButton-contained {
+  background: linear-gradient(135deg, #2563eb, #0ea5e9) !important;
+  box-shadow: 0 16px 34px rgba(37,99,235,0.22) !important;
+}
+
+.authCard .MuiOutlinedInput-root {
+  border-radius: 16px !important;
+  background: #ffffff;
+}
+
+/* ---------- Final Light Home Dashboard ---------- */
+.homeLightPage {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 26px;
+  color: #0f172a;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(37, 99, 235, 0.14), transparent 30%),
+    radial-gradient(circle at 88% 16%, rgba(6, 182, 212, 0.12), transparent 28%),
+    linear-gradient(135deg, #f8fbff 0%, #eef6ff 50%, #ffffff 100%);
+}
+
+.homeLightPage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(15,23,42,0.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,23,42,0.032) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+.homeLightBlob {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(16px);
+  pointer-events: none;
+  animation: floatingBlob 8s ease-in-out infinite;
+}
+
+.homeLightBlob.one {
+  width: 260px;
+  height: 260px;
+  left: -90px;
+  bottom: 15%;
+  background: rgba(37,99,235,0.13);
+}
+
+.homeLightBlob.two {
+  width: 330px;
+  height: 330px;
+  right: -120px;
+  top: 18%;
+  background: rgba(6,182,212,0.11);
+  animation-delay: -2s;
+}
+
+@keyframes floatingBlob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+.homeLightNav {
+  position: relative;
+  z-index: 2;
+  max-width: 1220px;
+  margin: 0 auto 24px;
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 18px;
+  border: 1px solid rgba(148,163,184,0.24);
+  border-radius: 26px;
+  background: rgba(255,255,255,0.76);
+  box-shadow: 0 20px 58px rgba(15,23,42,0.10);
+  backdrop-filter: blur(22px);
+}
+
+.homeLightBrand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.homeLightLogo {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 820;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  box-shadow: 0 14px 30px rgba(37,99,235,0.25);
+}
+
+.homeLightBrand h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.1rem;
+  font-weight: 760;
+}
+
+.homeLightBrand span {
+  color: #64748b;
+  font-size: 0.84rem;
+}
+
+.homeLightActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.homeLightActions .MuiIconButton-root,
+.homeLightActions .MuiButton-root {
+  color: #0f172a !important;
+  border-radius: 14px !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+}
+
+.homeLightActions .MuiButton-root {
+  background: #f1f5f9;
+}
+
+.homeLightActions .MuiButton-root:hover,
+.homeLightActions .MuiIconButton-root:hover {
+  color: #1d4ed8 !important;
+  background: #e0efff;
+}
+
+.homeLightMain {
+  position: relative;
+  z-index: 2;
+  max-width: 1220px;
+  min-height: calc(100vh - 132px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 24px;
+}
+
+.homeLightPanel {
+  border: 1px solid rgba(148,163,184,0.24);
+  border-radius: 34px;
+  background: rgba(255,255,255,0.76);
+  box-shadow: 0 26px 80px rgba(15,23,42,0.10);
+  backdrop-filter: blur(24px);
+  animation: homePanelIn 0.45s ease both;
+}
+
+@keyframes homePanelIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heroPanel {
+  padding: clamp(24px, 4vw, 46px);
+}
+
+.homeLightBadge {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  color: #1d4ed8;
+  background: #eff6ff;
+  font-size: 0.83rem;
+  font-weight: 760;
+}
+
+.homeLightPanel h1 {
+  margin: 20px 0 12px;
+  color: #0f172a;
+  font-size: clamp(2.2rem, 4.6vw, 4.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  font-weight: 820;
+}
+
+.homeLightPanel p {
+  max-width: 560px;
+  margin: 0 0 22px;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.68;
+}
+
+.homeLightPublicBox {
+  margin-bottom: 18px;
+  padding: 15px;
+  border: 1px solid #dbeafe;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #eff6ff, #ffffff);
+}
+
+.homeLightPublicBox label {
+  display: block;
+  margin-bottom: 9px;
+  color: #1e3a8a;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.homeLightPublicBox > div,
+.homeLightJoinBox,
+.homeLightQuickActions,
+.homeLightInviteActions {
+  display: grid;
+  gap: 12px;
+}
+
+.homeLightPublicBox > div,
+.homeLightJoinBox {
+  grid-template-columns: 1fr auto;
+}
+
+.homeLightQuickActions,
+.homeLightInviteActions {
+  grid-template-columns: 1fr 1fr;
+}
+
+.homeLightPublicBox .MuiOutlinedInput-root,
+.homeLightJoinBox .MuiOutlinedInput-root {
+  border-radius: 16px !important;
+  background: #ffffff !important;
+}
+
+.homeLightJoinBox {
+  margin-bottom: 14px;
+}
+
+.homeLightJoinBox .MuiButton-root,
+.homeLightQuickActions .MuiButton-root,
+.homeLightInviteActions .MuiButton-root,
+.homeLightPublicBox .MuiButton-root {
+  min-height: 50px;
+  border-radius: 16px !important;
+  text-transform: none !important;
+  font-weight: 720 !important;
+}
+
+.homeLightJoinBox .MuiButton-contained,
+.homeLightQuickActions .MuiButton-contained,
+.homeLightInviteActions .MuiButton-contained {
+  background: linear-gradient(135deg, #2563eb, #0ea5e9) !important;
+  box-shadow: 0 14px 30px rgba(37,99,235,0.22) !important;
+}
+
+.homeLightQuickActions .MuiButton-outlined,
+.homeLightInviteActions .MuiButton-outlined,
+.homeLightPublicBox .MuiButton-outlined {
+  color: #1d4ed8 !important;
+  border-color: #bfdbfe !important;
+  background: #ffffff;
+}
+
+.homeLightInviteCard {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid #dbeafe;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #ffffff, #f8fbff);
+  box-shadow: 0 18px 46px rgba(15,23,42,0.08);
+}
+
+.homeLightInviteTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.homeLightInviteTop span {
+  display: block;
+  color: #2563eb;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.homeLightInviteTop strong {
+  display: block;
+  margin-top: 4px;
+  color: #0f172a;
+  font-size: 1.04rem;
+  font-weight: 760;
+}
+
+.homeLightInviteTop svg {
+  color: #0ea5e9;
+}
+
+.homeLightInviteCard input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border: 1px solid #bfdbfe;
+  border-radius: 16px;
+  color: #0f172a;
+  background: #eff6ff;
+  font: inherit;
+  font-weight: 600;
+  outline: none;
+}
+
+.homeLightInviteActions {
+  margin-top: 12px;
+}
+
+.visualPanel {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: clamp(22px, 4vw, 46px);
+}
+
+.visualPanel::before {
+  content: "";
+  position: absolute;
+  width: 540px;
+  height: 540px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(37,99,235,0.13), transparent 66%);
+  animation: floatingBlob 7s ease-in-out infinite;
+}
+
+.meetingMockup {
+  position: relative;
+  z-index: 1;
+  width: min(620px, 100%);
+  padding: 18px;
+  border: 1px solid rgba(148,163,184,0.25);
+  border-radius: 32px;
+  background: rgba(255,255,255,0.72);
+  box-shadow: 0 28px 80px rgba(15,23,42,0.12);
+  backdrop-filter: blur(18px);
+}
+
+.mockTop {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mockTop span {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+
+.mockGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.mockTile {
+  position: relative;
+  min-height: 160px;
+  border-radius: 22px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top, rgba(37,99,235,0.18), transparent 42%),
+    linear-gradient(135deg, #eef6ff, #ffffff);
+  border: 1px solid rgba(148,163,184,0.22);
+}
+
+.mockTile::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 54px;
+  height: 54px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  box-shadow: 0 14px 28px rgba(37,99,235,0.22);
+}
+
+.mockTile::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(46% + 52px);
+  width: 92px;
+  height: 34px;
+  transform: translateX(-50%);
+  border-radius: 999px 999px 18px 18px;
+  background: rgba(15,23,42,0.08);
+}
+
+.mockTile.active {
+  outline: 2px solid rgba(34,197,94,0.75);
+}
+
+.mockTile span {
+  position: absolute;
+  left: 13px;
+  bottom: 13px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #0f172a;
+  background: rgba(255,255,255,0.76);
+  font-size: 0.8rem;
+  font-weight: 760;
+}
+
+.mockControls {
+  width: fit-content;
+  display: flex;
+  gap: 10px;
+  margin: 18px auto 0;
+  padding: 11px 14px;
+  border-radius: 999px;
+  background: #f1f5f9;
+}
+
+.mockControls i {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: #dbe3ef;
+}
+
+.mockControls .end {
+  background: #ef4444;
+}
+
+@media (max-width: 980px) {
+  .homeLightMain { grid-template-columns: 1fr; }
+  .visualPanel { min-height: 470px; }
+}
+
+@media (max-width: 640px) {
+  .homeLightPage { padding: 16px; }
+  .homeLightNav { flex-direction: column; align-items: stretch; }
+  .homeLightActions { justify-content: space-between; }
+  .homeLightJoinBox,
+  .homeLightQuickActions,
+  .homeLightInviteActions,
+  .homeLightPublicBox > div { grid-template-columns: 1fr; }
+  .mockGrid { grid-template-columns: 1fr; }
+  .homeLightPanel h1 { font-size: 2.4rem; }
+}
+
+/* =========================================================
+   Final polished light dashboard override
+========================================================= */
+:root {
+  --app-font: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body, button, input, textarea, .MuiTypography-root, .MuiButton-root, .MuiInputBase-input {
+  font-family: var(--app-font) !important;
+}
+
+.homePolishPage {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  color: #122033;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(59, 130, 246, 0.15), transparent 30%),
+    radial-gradient(circle at 90% 16%, rgba(14, 165, 233, 0.13), transparent 30%),
+    linear-gradient(135deg, #f8fbff 0%, #edf6ff 48%, #ffffff 100%);
+}
+
+.homePolishPage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.36;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(to bottom, black, transparent 88%);
+}
+
+.homePolishOrb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(16px);
+  pointer-events: none;
+  animation: polishFloat 8s ease-in-out infinite alternate;
+}
+
+.homePolishOrbOne {
+  width: 280px;
+  height: 280px;
+  left: -90px;
+  bottom: 12%;
+  background: rgba(37, 99, 235, 0.16);
+}
+
+.homePolishOrbTwo {
+  width: 360px;
+  height: 360px;
+  right: -120px;
+  top: 18%;
+  background: rgba(14, 165, 233, 0.15);
+  animation-delay: 1s;
+}
+
+@keyframes polishFloat {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(18px, -16px, 0) scale(1.04); }
+}
+
+.homePolishNav {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  margin: 0 auto 24px;
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 18px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 26px;
+  background: rgba(255,255,255,0.78);
+  box-shadow: 0 22px 70px rgba(15, 23, 42, 0.10);
+  backdrop-filter: blur(22px);
+}
+
+.homePolishBrand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.homePolishLogo {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  box-shadow: 0 16px 34px rgba(37, 99, 235, 0.24);
+  font-size: 1.18rem;
+  font-weight: 780;
+}
+
+.homePolishBrand h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.1rem;
+  line-height: 1.05;
+  font-weight: 720;
+}
+
+.homePolishBrand span {
+  color: #64748b;
+  font-size: 0.84rem;
+}
+
+.homePolishActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.homePolishActions .MuiButton-root,
+.homePolishActions .MuiIconButton-root {
+  border-radius: 14px !important;
+  color: #334155 !important;
+  text-transform: none !important;
+  font-weight: 650 !important;
+}
+
+.homePolishActions .MuiButton-root {
+  background: #f1f5f9;
+}
+
+.homePolishActions .MuiButton-root:hover,
+.homePolishActions .MuiIconButton-root:hover {
+  color: #1d4ed8 !important;
+  background: #e0efff;
+}
+
+.homePolishMain {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  min-height: calc(100vh - 130px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.86fr 1.14fr;
+  gap: 24px;
+}
+
+.homePolishCard {
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 34px;
+  background: rgba(255,255,255,0.76);
+  box-shadow: 0 30px 90px rgba(15, 23, 42, 0.10);
+  backdrop-filter: blur(22px);
+  animation: homePolishEnter 0.45s ease both;
+}
+
+@keyframes homePolishEnter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.homePolishHero {
+  padding: clamp(26px, 4vw, 46px);
+}
+
+.homePolishBadge {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 13px;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  color: #1d4ed8;
+  background: #eff6ff;
+  font-size: 0.82rem;
+  font-weight: 720;
+}
+
+.homePolishHero h1 {
+  margin: 24px 0 12px;
+  color: #0f172a;
+  max-width: 470px;
+  font-size: clamp(2.35rem, 5vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  font-weight: 760;
+}
+
+.homePolishHero p {
+  max-width: 520px;
+  margin: 0 0 24px;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.homePolishUrlBox {
+  margin-bottom: 18px;
+  padding: 15px;
+  border: 1px solid #dbeafe;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #eff6ff, #ffffff);
+}
+
+.homePolishUrlStatus {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.homePolishUrlStatus svg {
+  color: #22c55e;
+  font-size: 18px;
+}
+
+.homePolishUrlRow,
+.homePolishJoinRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.homePolishUrlRow .MuiOutlinedInput-root,
+.homePolishJoinRow .MuiOutlinedInput-root {
+  border-radius: 15px !important;
+  background: #ffffff !important;
+}
+
+.homePolishUrlRow .MuiButton-root,
+.homePolishJoinRow .MuiButton-root,
+.homePolishButtonGrid .MuiButton-root,
+.homePolishInviteActions .MuiButton-root {
+  min-height: 46px;
+  border-radius: 15px !important;
+  text-transform: none !important;
+  font-weight: 680 !important;
+}
+
+.homePolishJoinRow {
+  margin-top: 12px;
+}
+
+.homePolishButtonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.homePolishJoinRow .MuiButton-contained,
+.homePolishButtonGrid .MuiButton-contained,
+.homePolishInviteActions .MuiButton-contained {
+  background: linear-gradient(135deg, #2563eb, #0ea5e9) !important;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.22) !important;
+}
+
+.homePolishButtonGrid .MuiButton-outlined,
+.homePolishInviteActions .MuiButton-outlined,
+.homePolishUrlRow .MuiButton-outlined {
+  color: #1d4ed8 !important;
+  border-color: #bfdbfe !important;
+  background: #ffffff;
+}
+
+.homePolishInvite {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid #dbeafe;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #ffffff, #eff6ff);
+  box-shadow: 0 18px 45px rgba(37, 99, 235, 0.10);
+}
+
+.homePolishInviteTitle {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.homePolishInviteTitle span {
+  display: block;
+  color: #2563eb;
+  font-size: 0.76rem;
+  font-weight: 760;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.homePolishInviteTitle strong {
+  display: block;
+  margin-top: 4px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.homePolishInvite input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #bfdbfe;
+  border-radius: 15px;
+  color: #0f172a;
+  background: #ffffff;
+  font: inherit;
+  outline: none;
+}
+
+.homePolishInviteActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.homePolishVisual {
+  display: grid;
+  place-items: center;
+  padding: clamp(28px, 5vw, 54px);
+  overflow: hidden;
+}
+
+.homePolishMock {
+  width: min(620px, 100%);
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 30px;
+  background: rgba(255,255,255,0.80);
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.12);
+}
+
+.homePolishMockTop {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.homePolishMockTop span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+
+.homePolishMockGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.homePolishMockGrid div {
+  position: relative;
+  min-height: 160px;
+  border-radius: 22px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(37, 99, 235, 0.22), transparent 32%),
+    linear-gradient(135deg, #f8fbff, #dbeafe);
+}
+
+.homePolishMockGrid div.active {
+  outline: 2px solid #22c55e;
+}
+
+.homePolishMockGrid div::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+}
+
+.homePolishMockGrid div::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(44% + 48px);
+  width: 90px;
+  height: 34px;
+  transform: translateX(-50%);
+  border-radius: 999px 999px 18px 18px;
+  background: #cbd5e1;
+}
+
+.homePolishMockGrid b {
+  position: absolute;
+  left: 13px;
+  bottom: 13px;
+  z-index: 2;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: #0f172a;
+  background: rgba(255,255,255,0.82);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.homePolishMockControls {
+  width: fit-content;
+  display: flex;
+  gap: 10px;
+  margin: 18px auto 0;
+  padding: 11px 14px;
+  border-radius: 999px;
+  background: #f1f5f9;
+}
+
+.homePolishMockControls i {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+
+.homePolishMockControls .danger {
+  background: #ef4444;
+}
+
+.authHeroTextV2 h1,
+.authTitleV2,
+.historyTitleBox h1 {
+  font-weight: 760 !important;
+  letter-spacing: -0.055em !important;
+}
+
+@media (max-width: 980px) {
+  .homePolishMain { grid-template-columns: 1fr; }
+  .homePolishVisual { min-height: 470px; }
+}
+
+@media (max-width: 640px) {
+  .homePolishPage { padding: 16px; }
+  .homePolishNav { flex-direction: column; align-items: stretch; }
+  .homePolishActions { justify-content: space-between; }
+  .homePolishUrlRow,
+  .homePolishJoinRow,
+  .homePolishButtonGrid,
+  .homePolishInviteActions { grid-template-columns: 1fr; }
+  .homePolishMockGrid { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   Elite Light Home Dashboard
+========================================================= */
+
+.homeElitePage {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 26px;
+  color: #172033;
+  font-family: "Inter", "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(96, 165, 250, 0.28), transparent 32%),
+    radial-gradient(circle at 90% 16%, rgba(45, 212, 191, 0.20), transparent 30%),
+    linear-gradient(135deg, #f8fbff 0%, #eef5ff 45%, #f8fafc 100%);
+}
+
+.homeEliteGrid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.38;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 86%);
+}
+
+.homeEliteBlob {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(18px);
+  pointer-events: none;
+  animation: homeFloat 7s ease-in-out infinite;
+}
+
+.homeEliteBlobOne {
+  width: 260px;
+  height: 260px;
+  left: -95px;
+  top: 18%;
+  background: rgba(59, 130, 246, 0.22);
+}
+
+.homeEliteBlobTwo {
+  width: 330px;
+  height: 330px;
+  right: -120px;
+  bottom: 14%;
+  background: rgba(20, 184, 166, 0.18);
+  animation-delay: 1.4s;
+}
+
+@keyframes homeFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -18px, 0); }
+}
+
+.homeEliteNav {
+  position: relative;
+  z-index: 2;
+  max-width: 1220px;
+  min-height: 76px;
+  margin: 0 auto 24px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.10);
+  backdrop-filter: blur(22px);
+}
+
+.homeEliteBrand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.homeEliteLogo {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  color: white;
+  font-size: 1.22rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #2563eb, #22c1dc);
+  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.24);
+}
+
+.homeEliteBrand h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.1rem;
+  font-weight: 780;
+  letter-spacing: -0.02em;
+}
+
+.homeEliteBrand span {
+  color: #64748b;
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+
+.homeEliteActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.homeEliteActions .MuiIconButton-root,
+.homeEliteActions .MuiButton-root {
+  color: #1e293b !important;
+  border-radius: 14px !important;
+  text-transform: none !important;
+  font-weight: 650 !important;
+}
+
+.homeEliteActions .MuiButton-root {
+  background: rgba(15, 23, 42, 0.05);
+}
+
+.homeEliteActions .MuiButton-root:hover,
+.homeEliteActions .MuiIconButton-root:hover {
+  background: rgba(37, 99, 235, 0.10);
+}
+
+.homeEliteMain {
+  position: relative;
+  z-index: 2;
+  max-width: 1220px;
+  min-height: calc(100vh - 132px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 24px;
+}
+
+.homeEliteHero,
+.homeEliteVisual {
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 30px 90px rgba(15, 23, 42, 0.11);
+  backdrop-filter: blur(24px);
+}
+
+.homeEliteHero {
+  padding: clamp(24px, 4vw, 46px);
+}
+
+.homeEliteBadge {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 999px;
+  color: #1d4ed8;
+  background: rgba(239, 246, 255, 0.85);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.homeEliteHero h1 {
+  max-width: 560px;
+  margin: 22px 0 14px;
+  color: #0f172a;
+  font-size: clamp(2.55rem, 5vw, 5.3rem);
+  line-height: 0.96;
+  letter-spacing: -0.07em;
+  font-weight: 760;
+}
+
+.homeEliteHero p {
+  max-width: 560px;
+  margin: 0 0 22px;
+  color: #526176;
+  font-size: 1.02rem;
+  line-height: 1.76;
+  font-weight: 460;
+}
+
+.homeEliteMiniStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.homeEliteMiniStats div {
+  min-height: 78px;
+  padding: 13px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.homeEliteMiniStats svg {
+  color: #2563eb;
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.homeEliteMiniStats span {
+  display: block;
+  color: #334155;
+  font-size: 0.84rem;
+  font-weight: 650;
+}
+
+.homeEliteUrlBox {
+  margin-bottom: 16px;
+  padding: 15px;
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.88), rgba(255,255,255,0.70));
+}
+
+.homeEliteUrlHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: #1d4ed8;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.homeEliteUrlHead svg {
+  font-size: 18px;
+}
+
+.homeEliteUrlRow,
+.homeEliteJoin {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+.homeEliteUrlRow .MuiOutlinedInput-root,
+.homeEliteJoin .MuiOutlinedInput-root {
+  border-radius: 16px !important;
+  background: #ffffff !important;
+}
+
+.homeEliteUrlRow .MuiButton-root,
+.homeEliteJoin .MuiButton-root,
+.homeEliteButtons .MuiButton-root,
+.homeEliteInviteActions .MuiButton-root {
+  min-height: 50px;
+  border-radius: 16px !important;
+  text-transform: none !important;
+  font-weight: 720 !important;
+}
+
+.homeEliteUrlRow .MuiButton-outlined,
+.homeEliteButtons .MuiButton-outlined,
+.homeEliteInviteActions .MuiButton-outlined {
+  color: #1d4ed8 !important;
+  border-color: rgba(37, 99, 235, 0.25) !important;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.homeEliteJoin {
+  margin-bottom: 12px;
+}
+
+.homeEliteJoin .MuiButton-contained,
+.homeEliteButtons .MuiButton-contained,
+.homeEliteInviteActions .MuiButton-contained {
+  background: linear-gradient(135deg, #2563eb, #1fb6d9) !important;
+  box-shadow: 0 18px 34px rgba(37, 99, 235, 0.22) !important;
+}
+
+.homeEliteButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.homeEliteInvite {
+  margin-top: 17px;
+  padding: 18px;
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+.homeEliteInviteTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.homeEliteInviteTop span {
+  display: block;
+  color: #64748b;
+  font-size: 0.76rem;
+  font-weight: 720;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.homeEliteInviteTop strong {
+  display: block;
+  margin-top: 4px;
+  color: #0f172a;
+  font-size: 1.03rem;
+  font-weight: 760;
+}
+
+.homeEliteInviteTop svg {
+  color: #16a34a;
+}
+
+.homeEliteInvite input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 16px;
+  color: #1e293b;
+  background: #f8fbff;
+  font: inherit;
+  font-weight: 500;
+  outline: none;
+}
+
+.homeEliteInviteActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.homeEliteVisual {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: clamp(24px, 4vw, 46px);
+}
+
+.homeEliteVisual::before {
+  content: "";
+  position: absolute;
+  width: 540px;
+  height: 540px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.18), transparent 68%);
+}
+
+.homeEliteWindow {
+  position: relative;
+  z-index: 1;
+  width: min(640px, 100%);
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 34px 90px rgba(15, 23, 42, 0.14);
+}
+
+.homeEliteWindowTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: #64748b;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.homeEliteWindowTop span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+
+.homeEliteWindowTop b {
+  margin-left: auto;
+  font-weight: 650;
+}
+
+.homeEliteVideoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.homeEliteTile {
+  position: relative;
+  min-height: 165px;
+  overflow: hidden;
+  border-radius: 23px;
+  background:
+    radial-gradient(circle at 50% 34%, rgba(59, 130, 246, 0.22), transparent 30%),
+    linear-gradient(135deg, #f8fafc, #eaf3ff);
+}
+
+.homeEliteTile.active {
+  outline: 2px solid rgba(34, 197, 94, 0.72);
+}
+
+.homeEliteTile i {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 54px;
+  height: 54px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #24c6dc);
+  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.22);
+}
+
+.homeEliteTile i::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 67px;
+  width: 92px;
+  height: 35px;
+  transform: translateX(-50%);
+  border-radius: 999px 999px 16px 16px;
+  background: rgba(15, 23, 42, 0.10);
+}
+
+.homeEliteTile small {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #1e293b;
+  background: rgba(255, 255, 255, 0.78);
+  font-weight: 650;
+}
+
+.homeEliteControlBar {
+  width: fit-content;
+  display: flex;
+  gap: 10px;
+  margin: 18px auto 0;
+  padding: 11px 14px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.08);
+}
+
+.homeEliteControlBar em {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.16);
+}
+
+.homeEliteControlBar .end {
+  background: #ef4444;
+}
+
+@media (max-width: 980px) {
+  .homeEliteMain {
+    grid-template-columns: 1fr;
+  }
+
+  .homeEliteVisual {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .homeElitePage {
+    padding: 16px;
+  }
+
+  .homeEliteNav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .homeEliteActions {
+    justify-content: space-between;
+  }
+
+  .homeEliteUrlRow,
+  .homeEliteJoin,
+  .homeEliteButtons,
+  .homeEliteInviteActions,
+  .homeEliteMiniStats {
+    grid-template-columns: 1fr;
+  }
+
+  .homeEliteVideoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .homeEliteHero h1 {
+    font-size: 2.6rem;
+  }
+}
+
+/* =========================================================
+   Home Nova Premium Light Theme
+========================================================= */
+
+.homeNovaPage {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 26px;
+  color: #142033;
+  font-family: "Inter", "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 10% 14%, rgba(96, 165, 250, 0.25), transparent 30%),
+    radial-gradient(circle at 92% 18%, rgba(45, 212, 191, 0.16), transparent 28%),
+    linear-gradient(135deg, #fdfefe 0%, #f3f8ff 48%, #f8fbff 100%);
+}
+
+.homeNovaPattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.32;
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+.homeNovaGlow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(20px);
+  pointer-events: none;
+  animation: novaFloat 7s ease-in-out infinite;
+}
+
+.homeNovaGlowOne {
+  width: 250px;
+  height: 250px;
+  left: -90px;
+  top: 16%;
+  background: rgba(59, 130, 246, 0.20);
+}
+
+.homeNovaGlowTwo {
+  width: 320px;
+  height: 320px;
+  right: -120px;
+  bottom: 10%;
+  background: rgba(14, 165, 233, 0.16);
+  animation-delay: 1.3s;
+}
+
+@keyframes novaFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+
+.homeNovaNav {
+  position: relative;
+  z-index: 2;
+  max-width: 1220px;
+  min-height: 78px;
+  margin: 0 auto 24px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.homeNovaBrand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.homeNovaLogo {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 14px 28px rgba(59, 130, 246, 0.20);
+}
+
+.homeNovaBrand h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.12rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.homeNovaBrand span {
+  color: #64748b;
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+
+.homeNovaNavActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.homeNovaNavActions .MuiIconButton-root,
+.homeNovaNavActions .MuiButton-root {
+  color: #1e293b !important;
+  border-radius: 14px !important;
+  text-transform: none !important;
+  font-weight: 650 !important;
+}
+
+.homeNovaNavActions .MuiButton-root {
+  background: rgba(15, 23, 42, 0.05);
+}
+
+.homeNovaNavActions .MuiButton-root:hover,
+.homeNovaNavActions .MuiIconButton-root:hover {
+  background: rgba(37, 99, 235, 0.10);
+}
+
+.homeNovaMain {
+  position: relative;
+  z-index: 2;
+  max-width: 1220px;
+  min-height: calc(100vh - 132px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.94fr 1.06fr;
+  gap: 24px;
+}
+
+.homeNovaLeft,
+.homeNovaRight {
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(20px);
+}
+
+.homeNovaLeft {
+  padding: clamp(24px, 4vw, 46px);
+}
+
+.homeNovaBadge {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  border-radius: 999px;
+  color: #1d4ed8;
+  background: rgba(239, 246, 255, 0.88);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.homeNovaLeft h1 {
+  max-width: 590px;
+  margin: 22px 0 14px;
+  color: #0f172a;
+  font-size: clamp(2.65rem, 5vw, 5.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+  font-weight: 760;
+}
+
+.homeNovaLeft p {
+  max-width: 560px;
+  margin: 0 0 22px;
+  color: #58677d;
+  font-size: 1rem;
+  line-height: 1.76;
+  font-weight: 450;
+}
+
+.homeNovaFeatureRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.homeNovaFeatureRow div {
+  min-height: 76px;
+  padding: 13px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.homeNovaFeatureRow svg {
+  color: #2563eb;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.homeNovaFeatureRow span {
+  display: block;
+  color: #334155;
+  font-size: 0.84rem;
+  font-weight: 640;
+}
+
+.homeNovaUrlBox {
+  margin-bottom: 16px;
+  padding: 15px;
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.92), rgba(255, 255, 255, 0.76));
+}
+
+.homeNovaUrlHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: #1d4ed8;
+  font-size: 0.82rem;
+  font-weight: 690;
+}
+
+.homeNovaUrlRow,
+.homeNovaJoinRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+.homeNovaUrlRow .MuiOutlinedInput-root,
+.homeNovaJoinRow .MuiOutlinedInput-root {
+  border-radius: 16px !important;
+  background: #ffffff !important;
+}
+
+.homeNovaUrlRow .MuiButton-root,
+.homeNovaJoinRow .MuiButton-root,
+.homeNovaActionGrid .MuiButton-root,
+.homeNovaInviteActions .MuiButton-root {
+  min-height: 50px;
+  border-radius: 16px !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+}
+
+.homeNovaUrlRow .MuiButton-outlined,
+.homeNovaActionGrid .MuiButton-outlined,
+.homeNovaInviteActions .MuiButton-outlined {
+  color: #1d4ed8 !important;
+  border-color: rgba(37, 99, 235, 0.22) !important;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.homeNovaJoinRow {
+  margin-bottom: 12px;
+}
+
+.homeNovaJoinRow .MuiButton-contained,
+.homeNovaActionGrid .MuiButton-contained,
+.homeNovaInviteActions .MuiButton-contained {
+  background: linear-gradient(135deg, #2563eb, #14b8d4) !important;
+  box-shadow: 0 16px 30px rgba(37, 99, 235, 0.20) !important;
+}
+
+.homeNovaActionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.homeNovaInviteBox {
+  margin-top: 17px;
+  padding: 18px;
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.80);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.homeNovaInviteTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.homeNovaInviteTop span {
+  display: block;
+  color: #64748b;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.homeNovaInviteTop strong {
+  display: block;
+  margin-top: 4px;
+  color: #0f172a;
+  font-size: 1.03rem;
+  font-weight: 760;
+}
+
+.homeNovaInviteTop svg {
+  color: #2563eb;
+}
+
+.homeNovaInviteBox input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  border-radius: 16px;
+  color: #1e293b;
+  background: #f8fbff;
+  font: inherit;
+  font-weight: 500;
+  outline: none;
+}
+
+.homeNovaInviteActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.homeNovaRight {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: clamp(24px, 4vw, 46px);
+}
+
+.homeNovaVisualWrap {
+  position: relative;
+  width: min(640px, 100%);
+}
+
+.homeNovaFloating {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid rgba(148, 163, 184, 0.20);
+  border-radius: 999px;
+  color: #1e293b;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.08);
+  font-size: 0.82rem;
+  font-weight: 650;
+  animation: novaFloat 6.5s ease-in-out infinite;
+}
+
+.homeNovaFloating svg {
+  color: #2563eb;
+  font-size: 18px;
+}
+
+.homeNovaFloatingOne {
+  top: 26px;
+  left: -18px;
+}
+
+.homeNovaFloatingTwo {
+  right: -14px;
+  top: 110px;
+  animation-delay: 1.2s;
+}
+
+.homeNovaVisualCard {
+  position: relative;
+  z-index: 2;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.08), transparent 24%),
+    linear-gradient(145deg, rgba(255,255,255,0.94), rgba(246,250,255,0.88));
+  box-shadow: 0 36px 90px rgba(15, 23, 42, 0.11);
+}
+
+.homeNovaVisualHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.homeNovaVisualHeader small {
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 620;
+}
+
+.homeNovaDots {
+  display: flex;
+  gap: 7px;
+}
+
+.homeNovaDots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+
+.homeNovaIllustration {
+  display: grid;
+  grid-template-columns: 1.2fr 0.92fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.homeNovaBigScreen,
+.homeNovaMiniScreen,
+.homeNovaChatCard {
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+}
+
+.homeNovaBigScreen {
+  min-height: 330px;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(59, 130, 246, 0.20), transparent 28%),
+    linear-gradient(135deg, #eaf2ff, #dceeff);
+}
+
+.homeNovaSmallColumn {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+}
+
+.homeNovaMiniScreen {
+  min-height: 158px;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(34, 197, 94, 0.12), transparent 26%),
+    linear-gradient(135deg, #f4f8ff, #eaf0fb);
+}
+
+.homeNovaChatCard {
+  grid-column: 1 / -1;
+  min-height: 135px;
+  padding: 16px;
+  background:
+    linear-gradient(135deg, #eef9ff, #ecfdf5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.homeNovaChatBubble {
+  height: 16px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.14);
+}
+
+.homeNovaChatBubble.one { width: 62%; }
+.homeNovaChatBubble.two { width: 44%; }
+.homeNovaChatBubble.three { width: 72%; }
+
+.homeNovaPerson {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.homeNovaPerson i {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #8b5cf6);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.18);
+}
+
+.homeNovaPerson i::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 74px;
+  width: 110px;
+  height: 42px;
+  transform: translateX(-50%);
+  border-radius: 999px 999px 18px 18px;
+  background: rgba(15, 23, 42, 0.10);
+}
+
+.homeNovaPerson b {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #1e293b;
+  background: rgba(255, 255, 255, 0.90);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.homeNovaControlBar {
+  width: fit-content;
+  display: flex;
+  gap: 10px;
+  margin: 18px auto 0;
+  padding: 11px 14px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.homeNovaControlBar span {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.14);
+}
+
+.homeNovaControlBar .danger {
+  background: #ef4444;
+}
+
+@media (max-width: 980px) {
+  .homeNovaMain {
+    grid-template-columns: 1fr;
+  }
+
+  .homeNovaRight {
+    min-height: 520px;
+  }
+
+  .homeNovaFloatingOne {
+    left: 4px;
+  }
+
+  .homeNovaFloatingTwo {
+    right: 4px;
+  }
+}
+
+@media (max-width: 720px) {
+  .homeNovaPage {
+    padding: 16px;
+  }
+
+  .homeNovaNav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .homeNovaNavActions {
+    justify-content: space-between;
+  }
+
+  .homeNovaUrlRow,
+  .homeNovaJoinRow,
+  .homeNovaActionGrid,
+  .homeNovaInviteActions,
+  .homeNovaFeatureRow,
+  .homeNovaIllustration {
+    grid-template-columns: 1fr;
+  }
+
+  .homeNovaSmallColumn {
+    grid-template-rows: auto;
+  }
+
+  .homeNovaBigScreen {
+    min-height: 260px;
+  }
+
+  .homeNovaMiniScreen {
+    min-height: 140px;
+  }
+
+  .homeNovaFloating {
+    display: none;
+  }
+
+  .homeNovaLeft h1 {
+    font-size: 2.65rem;
+  }
+}

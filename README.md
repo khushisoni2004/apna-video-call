@@ -193,3 +193,5 @@ Both users join the same link.
 Allow camera and microphone.
 Start the video meeting.
 >>>>>>> 2d7fcdf (Add homepage and signup screenshots)
+
+Project maintained and improved regularly.

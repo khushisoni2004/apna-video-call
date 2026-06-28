@@ -1,5 +1,6 @@
 # Apna Video Call
 
+<<<<<<< HEAD
 Apna Video Call is a full-stack video meeting web application built with React, Node.js, Express, Socket.IO, WebRTC, and MongoDB Atlas.
 
 Users can create meeting rooms, share public invite links, join video calls, chat in real time, and save meeting history.
@@ -9,6 +10,16 @@ Users can create meeting rooms, share public invite links, join video calls, cha
 **Frontend:** https://frontend-one-snowy-92.vercel.app
 
 **Backend:** https://apna-video-call-vmd6.onrender.com
+=======
+A full-stack video meeting web application built with React, Node.js, Express, Socket.IO, WebRTC, and MongoDB Atlas.
+
+Users can create meeting rooms, share invite links, join video calls, chat in real time, and save meeting history.
+
+## Live Demo
+
+**Frontend:** https://frontend-one-snowy-92.vercel.app  
+**Backend:** https://apna-video-call-vmd6.onrender.com  
+>>>>>>> 2d7fcdf (Add homepage and signup screenshots)
 
 **Sample Meeting:** https://frontend-one-snowy-92.vercel.app/meet-khushi
 
@@ -20,6 +31,7 @@ Users can create meeting rooms, share public invite links, join video calls, cha
 ### Signup / Login Page
 ![Signup Page](assets/screenshots/signuppage.png)
 
+<<<<<<< HEAD
 
 ## Features
 
@@ -39,6 +51,25 @@ Users can create meeting rooms, share public invite links, join video calls, cha
 
 **Frontend:** React.js, Material UI, CSS Modules, Vercel
 
+=======
+## Features
+
+- User signup and login
+- Secure password hashing
+- MongoDB Atlas database storage
+- Create and join meeting rooms
+- Public meeting invite links
+- Real-time video calling with WebRTC
+- Real-time chat with Socket.IO
+- Meeting history storage
+- Responsive professional UI
+- Frontend hosted on Vercel
+- Backend hosted on Render
+
+## Tech Stack
+
+**Frontend:** React.js, Material UI, CSS Modules, Vercel  
+>>>>>>> 2d7fcdf (Add homepage and signup screenshots)
 **Backend:** Node.js, Express.js, Socket.IO, MongoDB Atlas, Mongoose, Render
 
 ## Project Structure
@@ -47,6 +78,7 @@ Users can create meeting rooms, share public invite links, join video calls, cha
 apna-video-call/
 ├── backend/
 ├── frontend/
+<<<<<<< HEAD
 ├── assets/
 │   └── screenshots/
 │       ├── homepage.png
@@ -61,11 +93,22 @@ apna-video-call/
 ### Backend
 
 ```env
+=======
+├── assets/screenshots/
+│   ├── homepage.png
+│   └── signuppage.png
+├── run-all.sh
+├── run-public.sh
+└── README.md
+Environment Variables
+Backend
+>>>>>>> 2d7fcdf (Add homepage and signup screenshots)
 PORT=8000
 MONGO_URI=your_mongodb_atlas_connection_string
 CLIENT_URL=https://frontend-one-snowy-92.vercel.app
 REQUIRE_DB=true
 DB_NAME=apna_zoom_clone
+<<<<<<< HEAD
 ```
 
 ### Frontend
@@ -115,3 +158,38 @@ apna_zoom_clone
 8. Start the video meeting.
 
 
+=======
+Frontend
+REACT_APP_BACKEND_URL=https://apna-video-call-vmd6.onrender.com
+REACT_APP_PUBLIC_FRONTEND_URL=https://frontend-one-snowy-92.vercel.app
+Run Locally
+Backend
+cd backend
+npm install --legacy-peer-deps
+npm run dev
+Frontend
+cd frontend
+npm install --legacy-peer-deps
+npm start
+Database
+
+MongoDB Atlas database:
+
+apna_zoom_clone
+├── users
+└── meetings
+Deployment
+
+Backend is deployed on Render.
+Frontend is deployed on Vercel.
+
+How to Use
+Open the frontend link.
+Signup or login.
+Create a new meeting.
+Copy the meeting link.
+Share it with another user.
+Both users join the same link.
+Allow camera and microphone.
+Start the video meeting.
+>>>>>>> 2d7fcdf (Add homepage and signup screenshots)

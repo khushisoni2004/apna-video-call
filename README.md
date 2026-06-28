@@ -116,3 +116,5 @@ Developed by Khushi Soni.
 This project is actively maintained and improved with new features.
 
 The app uses WebRTC for video calls and Socket.IO for real-time communication.
+
+The project supports real-time meetings with video, chat, and meeting history.
